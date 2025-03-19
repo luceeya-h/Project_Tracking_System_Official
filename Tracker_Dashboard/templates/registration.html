@@ -1,0 +1,35 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+<script src="{% static 'js/auth.js' %}"></script>
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="registercontainer">
+    <h2>Welcome to ProjectHub</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <div class="registerform-row">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="surname" placeholder="Surname" required>
+        </div>
+        <div class="registerform-row">
+            <input type="text" name="reg_number" placeholder="Registration Number" required>
+            <select name="role">
+                <option value="student">Student</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        <button type="submit" class="register-btn">Register</button>
+
+        <div class="register-link">
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
