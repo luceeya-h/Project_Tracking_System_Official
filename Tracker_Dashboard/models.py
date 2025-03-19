@@ -8,6 +8,8 @@ class Authentication(models.Model):
     regnum = models.CharField(max_length=20, unique=True)  # Registration number
     password = models.CharField(max_length=128)  # Store hashed passwords
     confirm_password = models.CharField(max_length=128)  # For validation purposes only
+    role = models.CharField(max_length=255, blank=True, null=True)
+
 
     def clean(self):
         # Ensure password and confirm_password match
