@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Whiteboard{% endblock %}
+
+{% block content %}
+<section id="whiteboard-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Project Whiteboard</h2>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <!-- Whiteboard content -->
+        </div>
+    </div>
+    <!-- Whiteboard Tips -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Whiteboard Tips</h2>
+        <ul class="space-y-3">
+            <li class="text-sm text-gray-600 dark:text-gray-400">Use the "Draw" tool for quick sketches.</li>
+            <li class="text-sm text-gray-600 dark:text-gray-400">Save your whiteboard regularly to avoid losing progress.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Progress{% endblock %}
+
+{% block content %}
+<section id="progress-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Project Progress</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <!-- Overall Progress -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 lg:col-span-2">
+                <!-- Progress content -->
+            </div>
+            <!-- Milestone Completion -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                <!-- Milestone content -->
+            </div>
+        </div>
+    </div>
+    <!-- Progress Summary -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Progress Summary</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Your project "Network Security Audit" is 65% complete. Keep up the good work!</p>
+    </div>
+</section>
+{% endblock %}

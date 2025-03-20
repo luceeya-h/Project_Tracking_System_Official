@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block content %}
+<section id="calendar-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold">Project Calendar</h2>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border overflow-hidden">
+            <!-- Calendar content -->
+        </div>
+    </div>
+    <!-- Upcoming Events -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Upcoming Events</h2>
+        <ul class="space-y-3">
+            <li class="text-sm text-gray-600 dark:text-gray-400">Team meeting on Jan 15, 2024.</li>
+            <li class="text-sm text-gray-600 dark:text-gray-400">Project deadline: "Security Implementation" on Jan 31, 2024.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

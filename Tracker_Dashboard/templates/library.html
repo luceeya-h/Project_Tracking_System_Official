@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Library{% endblock %}
+
+{% block content %}
+<section id="library-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Document Library</h2>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <!-- Library content -->
+        </div>
+    </div>
+    <!-- Recently Added Documents -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Recently Added Documents</h2>
+        <ul class="space-y-3">
+            <li class="text-sm text-gray-600 dark:text-gray-400">"Data Privacy Framework" - Uploaded by Mike Johnson.</li>
+            <li class="text-sm text-gray-600 dark:text-gray-400">"Security Protocols" - Uploaded by Jane Smith.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

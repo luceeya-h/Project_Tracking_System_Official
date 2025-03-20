@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Tasks{% endblock %}
+
+{% block content %}
+<section id="tasks-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold">Tasks & Assignments</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <!-- To Do Column -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border">
+                <!-- To Do content -->
+            </div>
+            <!-- In Progress Column -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border">
+                <!-- In Progress content -->
+            </div>
+            <!-- Completed Column -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border">
+                <!-- Completed content -->
+            </div>
+        </div>
+    </div>
+    <!-- Task Priorities -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Task Priorities</h2>
+        <ul class="space-y-3">
+            <li class="text-sm text-gray-600 dark:text-gray-400">High Priority: "Security Implementation" - Due Jan 31, 2024.</li>
+            <li class="text-sm text-gray-600 dark:text-gray-400">Medium Priority: "Testing & Evaluation" - Due Feb 28, 2024.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

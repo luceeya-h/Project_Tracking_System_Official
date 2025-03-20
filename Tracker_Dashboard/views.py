@@ -46,3 +46,33 @@ def register_view(request):
 def forgot_password_view(request):
     context = {'css_class': 'forgot-password-page'}
     return render(request, 'forgot_password.html', context)
+
+def student_view(request):
+    return render(request, 'student_view.html')
+
+def chatroom(request):
+    return render(request, 'chatroom.html')
+
+def progress(request):
+    return render(request, 'progress.html')
+
+def library(request):
+    return render(request, 'library.html')
+
+def whiteboard(request):
+    return render(request, 'whiteboard.html')
+
+def tasks(request):
+    return render(request, 'tasks.html')
+
+def calendar(request):
+    return render(request, 'calendar.html')
+
+def stickywall(request):
+    return render(request, 'stickywall.html')
+
+def upcoming(request):
+    return render(request, 'upcoming.html')
+
+def settings(request):
+    return render(request, 'settings.html')

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Student View{% endblock %}
+
+{% block content %}
+<section id="home-section" class="section-content">
+    <!-- Dashboard Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Total Projects</h3>
+            <p class="text-2xl font-bold" id="total-projects">3</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">In Progress</h3>
+            <p class="text-2xl font-bold text-amber-500" id="in-progress">2</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Completed</h3>
+            <p class="text-2xl font-bold text-green-500" id="completed">1</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Upcoming Deadlines</h3>
+            <p class="text-2xl font-bold text-red-500" id="upcoming-deadlines">2</p>
+        </div>
+    </div>
+    <!-- Projects and Activity -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Projects List -->
+        <div class="lg:col-span-2 bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold">My Projects</h2>
+                <button id="add-project-btn" class="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-md flex items-center text-sm">
+                    <i class="bx bx-plus mr-1"></i> Add Project
+                </button>
+            </div>
+            <div id="projects-list" class="space-y-4">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+        <!-- Recent Activity -->
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <h2 class="text-lg font-bold mb-4">Recent Activity</h2>
+            <div id="activity-list" class="space-y-3">
+                <!-- Recent activity items -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
