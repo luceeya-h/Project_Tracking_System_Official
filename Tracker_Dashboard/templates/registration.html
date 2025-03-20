@@ -16,8 +16,9 @@
         </div>
         <div class="registerform-row">
             <input type="text" name="reg_number" placeholder="Registration Number" required>
+            <input type="hidden" id="id_role" name="role" value="student">
         </div>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="email" id="id_email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         <button type="submit" class="register-btn">Register</button>
@@ -27,4 +28,5 @@
         </div>
     </form>
 </div>
+
 {% endblock %}
