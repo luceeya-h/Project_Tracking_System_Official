@@ -3,5 +3,6 @@ from .models import Authentication
 
 @admin.register(Authentication)
 class AuthenticationAdmin(admin.ModelAdmin):
-    list_display = ('email', 'firstname', 'surname', 'regnum')
-    search_fields = ('email', 'firstname', 'surname', 'regnum')
+    list_display = ('firstname', 'surname', 'email', 'regnum', 'role')
+    search_fields = ('firstname', 'surname', 'email', 'regnum')
+    list_filter = ('role',)

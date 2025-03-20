@@ -10,6 +10,9 @@ class Authentication(models.Model):
     confirm_password = models.CharField(max_length=128)  # For validation purposes only
     role = models.CharField(max_length=255, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "Users"
 
     def clean(self):
         # Ensure password and confirm_password match
@@ -22,4 +25,4 @@ class Authentication(models.Model):
         super(Authentication, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.email
+        return f"{self.firstname} {self.surname} ({self.email}) - Role: {self.role}"
