@@ -41,9 +41,40 @@
         <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
             <h2 class="text-lg font-bold mb-4">Recent Activity</h2>
             <div id="activity-list" class="space-y-3">
-                <!-- Recent activity items -->
+                <div class="flex items-start pb-3 border-b border-light-border dark:border-dark-border">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
+                        <i class="bx bx-check-circle"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Completed "Security Assessment" milestone.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">2 days ago</p>
+                    </div>
+                </div>
+                <div class="flex items-start pb-3 border-b border-light-border dark:border-dark-border">
+                    <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-green-500 dark:text-green-300 mr-3">
+                        <i class="bx bx-trending-up"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Progress updated to 65% for "Network Security Audit".</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">5 days ago</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-500 dark:text-purple-300 mr-3">
+                        <i class="bx bx-calendar"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Upcoming deadline: "Security Implementation" on Jan 31, 2024.</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">7 days left</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <!-- Project Overview -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Project Overview</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400">You are currently working on "Network Security Audit". The project is 65% complete and is due on Jan 31, 2024.</p>
     </div>
 </section>
 {% endblock %}
