@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 from . import views    
 from .views import CustomLoginView
+from .views import check_user
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -19,4 +20,5 @@ urlpatterns = [
     path('stickywall/', views.stickywall, name='stickywall'),
     path('upcoming/', views.upcoming, name='upcoming'),
     path('settings/', views.settings, name='settings'),
+    path('api/check-user/', check_user, name='check_user'),
 ]

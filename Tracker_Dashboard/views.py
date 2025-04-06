@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.contrib import messages
+from django.contrib.auth.hashers import check_password
 from .models import Authentication
 
 # Create your views here.
@@ -76,3 +77,19 @@ def upcoming(request):
 
 def settings(request):
     return render(request, 'settings.html')
+
+def check_user(request):
+    if request.method == 'POST':
+        import json
+        data = json.loads(request.body)
+        email = data.get('email')
+        password = data.get('password')
+
+        try:
+            user = Authentication.objects.get(email=email)
+            if check_password(password, user.password):
+                return JsonResponse({'exists': True})
+        except Authentication.DoesNotExist:
+            pass
+
+    return JsonResponse({'exists': False})
