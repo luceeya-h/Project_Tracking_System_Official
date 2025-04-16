@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Project Tracking System{% endblock %}</title>
+    <title>{% block title %}HIT Project Collaboration System{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,6 +32,7 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/marked/marked.min.css">
     {% block head %}{% endblock %}
 </head>
 <body class="bg-light-bg dark:bg-dark-bg text-gray-800 dark:text-gray-200 min-h-screen transition-colors duration-200">
@@ -41,7 +43,7 @@
                 <!-- Logo -->
                 <div class="flex items-center h-16 px-4 border-b border-light-border dark:border-dark-border">
                     <i class="bx bx-book-reader text-primary text-3xl"></i>
-                    <h1 class="text-xl font-bold ml-2">Project Tracker</h1>
+                    <h1 class="text-xl font-bold ml-2">HIT Project System</h1>
                 </div>
                 <!-- User Info -->
                 <div class="flex items-center px-4 py-4 border-b border-light-border dark:border-dark-border">
@@ -50,11 +52,11 @@
                     </div>
                     <div class="ml-3">
                         <p id="user-name" class="font-medium">Desire Munyanyi</p>
-                        <p id="user-role" class="text-sm text-gray-500 dark:text-gray-400">Student Role</p>
+                        <p id="user-role" class="text-sm text-gray-500 dark:text-gray-400">Student</p>
                     </div>
                 </div>
                 <!-- Navigation -->
-                <nav class="flex-1 px-2 py-4 overflow-y-auto">
+                <nav id="student-nav" class="flex-1 px-2 py-4 overflow-y-auto">
                     <ul class="space-y-1">
                         <li>
                             <a href="#home" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="home">
@@ -63,55 +65,37 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'chatroom' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
+                            <a href="#documentation" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="documentation">
+                                <i class="bx bx-file-blank text-xl mr-3"></i>
+                                <span>Documentation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#group" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="group">
+                                <i class="bx bx-group text-xl mr-3"></i>
+                                <span>Group Collaboration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chatroom" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="chatroom">
                                 <i class="bx bx-message-square-dots text-xl mr-3"></i>
                                 <span>Chatroom</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'progress' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
+                            <a href="#progress" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="progress">
                                 <i class="bx bx-trending-up text-xl mr-3"></i>
                                 <span>Progress</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'library' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-book-bookmark text-xl mr-3"></i>
-                                <span>Library</span>
+                            <a href="#reports" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="reports">
+                                <i class="bx bx-file text-xl mr-3"></i>
+                                <span>Reports</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'whiteboard' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-chalkboard text-xl mr-3"></i>
-                                <span>Whiteboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'tasks' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-task text-xl mr-3"></i>
-                                <span>Tasks</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'stickywall' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-note text-xl mr-3"></i>
-                                <span>Sticky Wall</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'calendar' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-calendar text-xl mr-3"></i>
-                                <span>Calendar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'upcoming' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
-                                <i class="bx bx-time-five text-xl mr-3"></i>
-                                <span>Upcoming</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'settings' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card">
+                            <a href="#settings" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
                                 <i class="bx bx-cog text-xl mr-3"></i>
                                 <span>Settings</span>
                             </a>
@@ -123,6 +107,57 @@
                             </a>
                         </li>
                     </ul>
+                </nav>
+                <!-- Added supervisor navigation to the sidebar -->
+                <nav id="supervisor-nav" class="flex-1 px-2 py-4 overflow-y-auto hidden">
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="#supervisor-home" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="supervisor-home">
+                                <i class="bx bx-home-alt text-xl mr-3"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#student-groups" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="student-groups">
+                                <i class="bx bx-group text-xl mr-3"></i>
+                                <span>Student Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#review-documents" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="review-documents">
+                                <i class="bx bx-file-find text-xl mr-3"></i>
+                                <span>Review Documents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#evaluation" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="evaluation">
+                                <i class="bx bx-list-check text-xl mr-3"></i>
+                                <span>Evaluation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#supervisor-reports" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
+                                <i class="bx bx-chart text-xl mr-3"></i>
+                                <span>Reports &amp; Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pt-6 mt-6 border-t border-light-border dark:border-dark-border">
+                        <ul class="space-y-1">
+                            <li>
+                                <a href="#settings" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
+                                    <i class="bx bx-cog text-xl mr-3"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#logout" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="supervisor-logout-btn">
+                                    <i class="bx bx-log-out text-xl mr-3"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </aside>
@@ -140,18 +175,10 @@
             <!-- Page Content -->
             <main class="flex-1 overflow-y-auto p-4">
                 {% block content %}{% endblock %}
-
-                <!-- Notifications -->
-                <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
-                    <h2 class="text-lg font-bold mb-4">Notifications</h2>
-                    <ul class="space-y-3">
-                        <li class="text-sm text-gray-600 dark:text-gray-400">You have a new message from your supervisor.</li>
-                        <li class="text-sm text-gray-600 dark:text-gray-400">Your project "Network Security Audit" is 65% complete.</li>
-                        <li class="text-sm text-gray-600 dark:text-gray-400">Upcoming deadline: "Security Implementation" on Jan 31, 2024.</li>
-                    </ul>
-                </div>
             </main>
         </div>
     </div>
+    <!-- Removed inline JavaScript and added a reference to the external script.js file -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

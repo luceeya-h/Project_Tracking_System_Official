@@ -1,4 +1,23 @@
 /* Example styles */
+
+/* Base styles for the project */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+    background-color: theme('colors.light.sidebar');
+}
+
+.dark .sidebar {
+    background-color: theme('colors.dark.sidebar');
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
