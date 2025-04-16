@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Upcoming{% endblock %}
+
+{% block content %}
+<section id="upcoming-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold">Upcoming Deadlines & Events</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Deadlines -->
+            <div>
+                <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                    <!-- Deadlines content -->
+                </div>
+            </div>
+            <!-- Upcoming Events -->
+            <div>
+                <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                    <!-- Events content -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Highlighted Deadlines -->
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mt-6">
+        <h2 class="text-lg font-bold mb-4">Highlighted Deadlines</h2>
+        <ul class="space-y-3">
+            <li class="text-sm text-gray-600 dark:text-gray-400">"Security Implementation" - Due Jan 31, 2024.</li>
+            <li class="text-sm text-gray-600 dark:text-gray-400">"Testing & Evaluation" - Due Feb 28, 2024.</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
