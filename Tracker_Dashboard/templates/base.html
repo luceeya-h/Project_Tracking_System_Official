@@ -60,49 +60,49 @@
                 <nav id="student-nav" class="flex-1 px-2 py-4 overflow-y-auto">
                     <ul class="space-y-1">
                         <li>
-                            <a href="#home" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="home">
+                            <a href="{% url 'home' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="home">
                                 <i class="bx bx-home-alt text-xl mr-3"></i>
                                 <span>Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#documentation" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="documentation">
+                            <a href="{% url 'documentation' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="documentation">
                                 <i class="bx bx-file-blank text-xl mr-3"></i>
                                 <span>Documentation</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#group" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="group">
+                            <a href="{% url 'group_collaboration' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="group">
                                 <i class="bx bx-group text-xl mr-3"></i>
                                 <span>Group Collaboration</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#chatroom" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="chatroom">
+                            <a href="{% url 'chatroom' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="chatroom">
                                 <i class="bx bx-message-square-dots text-xl mr-3"></i>
                                 <span>Chatroom</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#progress" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="progress">
+                            <a href="{% url 'progress' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="progress">
                                 <i class="bx bx-trending-up text-xl mr-3"></i>
                                 <span>Progress</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#reports" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="reports">
+                            <a href="{% url 'reports' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="reports">
                                 <i class="bx bx-file text-xl mr-3"></i>
                                 <span>Reports</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#settings" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
+                            <a href="{% url 'settings' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
                                 <i class="bx bx-cog text-xl mr-3"></i>
                                 <span>Settings</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#logout" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="logout-btn">
+                            <a href="{% url 'home' %}" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="logout-btn">
                                 <i class="bx bx-log-out text-xl mr-3"></i>
                                 <span>Log Out</span>
                             </a>
@@ -113,31 +113,31 @@
                 <nav id="supervisor-nav" class="flex-1 px-2 py-4 overflow-y-auto hidden">
                     <ul class="space-y-1">
                         <li>
-                            <a href="#supervisor-home" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="supervisor-home">
+                            <a href="{% url 'dashboard' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="supervisor-home">
                                 <i class="bx bx-home-alt text-xl mr-3"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#student-groups" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="student-groups">
+                            <a href="{% url 'student_groups' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="student-groups">
                                 <i class="bx bx-group text-xl mr-3"></i>
                                 <span>Student Groups</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#review-documents" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="review-documents">
+                            <a href="{% url 'review' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="review-documents">
                                 <i class="bx bx-file-find text-xl mr-3"></i>
                                 <span>Review Documents</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#evaluation" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="evaluation">
+                            <a href="{% url 'evaluation' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="evaluation">
                                 <i class="bx bx-list-check text-xl mr-3"></i>
                                 <span>Evaluation</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#supervisor-reports" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
+                            <a href="{% url 'home' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
                                 <i class="bx bx-chart text-xl mr-3"></i>
                                 <span>Reports &amp; Analytics</span>
                             </a>
@@ -146,13 +146,13 @@
                     <div class="pt-6 mt-6 border-t border-light-border dark:border-dark-border">
                         <ul class="space-y-1">
                             <li>
-                                <a href="#settings" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
+                                <a href="{% url 'settings' %}"class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
                                     <i class="bx bx-cog text-xl mr-3"></i>
                                     <span>Settings</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#logout" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="supervisor-logout-btn">
+                                <a href="{% url 'home' %}" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="supervisor-logout-btn">
                                     <i class="bx bx-log-out text-xl mr-3"></i>
                                     <span>Log Out</span>
                                 </a>
@@ -169,8 +169,63 @@
                 <button id="sidebar-toggle" class="p-2 rounded-md md:hidden">
                     <i class="bx bx-menu text-2xl"></i>
                 </button>
+                
                 <div class="flex-1 flex justify-between items-center ml-4 md:ml-0">
-                    <h2 id="page-title" class="text-xl font-bold">{% block header %}Home{% endblock %}</h2>
+                    <h2 id="page-title" class="text-xl font-bold">Home</h2>
+                    
+                    <div class="flex items-center space-x-4">
+                        <select id="role-selector" class="rounded-md border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card px-3 py-2 text-base">
+                            <option value="student">Student View</option>
+                            <option value="supervisor">Supervisor View</option>
+                        </select>
+                        <div class="relative">
+                            <button id="notification-btn" class="p-2 rounded-full hover:bg-light-card dark:hover:bg-dark-card relative">
+                                <i class="bx bx-bell text-xl"></i>
+                                <span id="notification-badge" class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">3</span>
+                            </button>
+                            <div id="notification-dropdown" class="absolute right-0 mt-2 w-72 bg-light-card dark:bg-dark-card rounded-md shadow-lg overflow-hidden z-20 border border-light-border dark:border-dark-border hidden">
+                                <div class="p-3 border-b border-light-border dark:border-dark-border flex justify-between items-center">
+                                    <h3 class="font-medium">Notifications</h3>
+                                    <button id="mark-all-read" class="text-xs text-primary hover:underline">Mark all as read</button>
+                                </div>
+                                <div id="notification-list" class="max-h-80 overflow-y-auto">
+                                    <div class="notification-item p-3 border-b border-light-border dark:border-dark-border hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-message-square-edit"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Jane Smith</span> commented on your chapter</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">10 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item p-3 border-b border-light-border dark:border-dark-border hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-check-circle"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Mr B Nyaruviro</span> approved your Chapter 1</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">2 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item p-3 hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-calendar-exclamation"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Deadline approaching</span> for Chapter 2 submission</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">1 day ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </header>
             <!-- Page Content -->
@@ -179,6 +234,7 @@
             </main>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

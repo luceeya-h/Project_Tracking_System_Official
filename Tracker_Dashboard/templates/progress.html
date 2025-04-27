@@ -3,6 +3,272 @@
 {% block title %}Progress{% endblock %}
 
 {% block content %}
-<h1>Project Progress</h1>
-<p>This page displays the progress of the project.</p>
+<section id="progress-section" class="section-content hidden">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Project Progress</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 lg:col-span-2">
+                <h3 class="font-semibold mb-3">Overall Progress</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Collaborative Project Tracking System</span>
+                            <span class="text-sm">35%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 35%"></div>
+                        </div>
+                        <div class="flex justify-between mt-1 text-xs text-gray-500 dark:text-gray-400">
+                            <span>Started: Sept 1, 2023</span>
+                            <span>Deadline: Jun 15, 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter Progress -->
+                <h3 class="font-semibold mb-3 mt-6">Chapter Progress</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Pre-Chapter Section</span>
+                            <span class="text-sm">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 1: Introduction</span>
+                            <span class="text-sm">100%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 2: Literature Review</span>
+                            <span class="text-sm">60%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 3: Analysis</span>
+                            <span class="text-sm">45%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 4: Design</span>
+                            <span class="text-sm">20%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-red-500 h-2.5 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 5: Implementation &amp; Testing</span>
+                            <span class="text-sm">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-gray-400 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">Chapter 6: Conclusions &amp; Recommendations</span>
+                            <span class="text-sm">0%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-gray-400 h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-medium">References &amp; Appendices</span>
+                            <span class="text-sm">30%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-purple-500 h-2.5 rounded-full" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                <h3 class="font-semibold mb-3">Chapter Scores</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">9/10</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-green-500 rounded" style="width: 90%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 1</div>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">7/10</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-amber-500 rounded" style="width: 70%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 2</div>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">6/10</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-amber-500 rounded" style="width: 60%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 3</div>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">-</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-gray-400 rounded" style="width: 0%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 4</div>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">-</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-gray-400 rounded" style="width: 0%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 5</div>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <div class="w-10 text-right mr-2">-</div>
+                        <div class="flex-1 h-4 bg-gray-200 dark:bg-gray-700 rounded">
+                            <div class="h-4 bg-gray-400 rounded" style="width: 0%"></div>
+                        </div>
+                        <div class="ml-2">Ch. 6</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="font-semibold mb-3">Current Average</h3>
+                    <div class="aspect-square w-full max-w-[200px] mx-auto relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <span class="block text-3xl font-bold">7.3</span>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">out of 10</span>
+                            </div>
+                        </div>
+                        <svg viewBox="0 0 100 100" class="transform -rotate-90 w-full h-full">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="10" class="text-gray-200 dark:text-gray-700"></circle>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="90.5" class="text-primary"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3 class="font-semibold mb-3">Group Contributions</h3>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white mr-2">
+                                <span class="text-xs font-bold">DM</span>
+                            </div>
+                            <span class="font-medium">Desire Munyanyi</span>
+                        </div>
+                        <span>40%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="bg-primary h-2.5 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white mr-2">
+                                <span class="text-xs font-bold">JS</span>
+                            </div>
+                            <span class="font-medium">Jane Smith</span>
+                        </div>
+                        <span>35%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="bg-amber-500 h-2.5 rounded-full" style="width: 35%"></div>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white mr-2">
+                                <span class="text-xs font-bold">MK</span>
+                            </div>
+                            <span class="font-medium">Mike Kumar</span>
+                        </div>
+                        <span>25%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 25%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-light-border dark:border-dark-border">
+                <h3 class="font-semibold mb-3">Contributions by Chapter</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-light-border dark:divide-dark-border">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 text-left text-sm font-medium">Chapter</th>
+                                <th class="py-2 px-4 text-center text-sm font-medium">Desire</th>
+                                <th class="py-2 px-4 text-center text-sm font-medium">Jane</th>
+                                <th class="py-2 px-4 text-center text-sm font-medium">Mike</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-light-border dark:divide-dark-border">
+                            <tr>
+                                <td class="py-2 px-4 text-sm">Pre-Chapter Section</td>
+                                <td class="py-2 px-4 text-center text-sm">20%</td>
+                                <td class="py-2 px-4 text-center text-sm">50%</td>
+                                <td class="py-2 px-4 text-center text-sm">30%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 text-sm">Chapter 1: Introduction</td>
+                                <td class="py-2 px-4 text-center text-sm">60%</td>
+                                <td class="py-2 px-4 text-center text-sm">30%</td>
+                                <td class="py-2 px-4 text-center text-sm">10%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 text-sm">Chapter 2: Literature Review</td>
+                                <td class="py-2 px-4 text-center text-sm">40%</td>
+                                <td class="py-2 px-4 text-center text-sm">55%</td>
+                                <td class="py-2 px-4 text-center text-sm">5%</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 text-sm">Chapter 3: Analysis</td>
+                                <td class="py-2 px-4 text-center text-sm">25%</td>
+                                <td class="py-2 px-4 text-center text-sm">25%</td>
+                                <td class="py-2 px-4 text-center text-sm">50%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

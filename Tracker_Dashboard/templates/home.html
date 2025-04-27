@@ -3,6 +3,148 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome to the Home Page</h1>
-<p>This is the main content for the home page.</p>
-{% endblock %}
+<section id="home-section" class="section-content">
+    <!-- Dashboard Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Project Status</h3>
+            <p class="text-2xl font-bold text-amber-500">In Progress</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Overall Completion</h3>
+            <p class="text-2xl font-bold">35%</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Chapter Completion</h3>
+            <p class="text-2xl font-bold text-green-500">2/6</p>
+        </div>
+        <div class="bg-light-card dark:bg-dark-card rounded-lg p-4 border border-light-border dark:border-dark-border">
+            <h3 class="text-gray-500 dark:text-gray-400 mb-2">Upcoming Deadline</h3>
+            <p class="text-2xl font-bold text-red-500">Mar 15</p>
+        </div>
+    </div>
+    
+    <!-- Project Overview and Activity -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Project Overview -->
+        <div class="lg:col-span-2 bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold">Project Overview</h2>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 border border-light-border dark:border-dark-border rounded-md text-sm">
+                        <i class="bx bx-share-alt mr-1"></i> Share with Group
+                    </button>
+                    <button class="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-md text-sm">
+                        <i class="bx bx-edit mr-1"></i> Edit
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h3 class="font-semibold text-lg">Collaborative Project Tracking System</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    A system for tracking academic projects with non-repudiation features, instant report generation for chapter reviews, and a feedback platform for student-supervisor collaboration.
+                </p>
+                
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-md text-xs">HIT400</span>
+                    <span class="px-2 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded-md text-xs">Information Security</span>
+                    <span class="px-2 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 rounded-md text-xs">Web Application</span>
+                </div>
+            </div>
+            
+            <div class="border-t border-light-border dark:border-dark-border pt-4 mt-4">
+                <h3 class="font-medium mb-2">Group Members</h3>
+                <div class="flex flex-wrap gap-2">
+                    <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                            <span class="text-xs font-bold">DM</span>
+                        </div>
+                        <span>Desire Munyanyi (You)</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white">
+                            <span class="text-xs font-bold">JS</span>
+                        </div>
+                        <span>Jane Smith</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
+                        <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white">
+                            <span class="text-xs font-bold">MK</span>
+                        </div>
+                        <span>Mike Kumar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-light-border dark:border-dark-border pt-4 mt-4">
+                <h3 class="font-medium mb-2">Supervisor</h3>
+                <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border inline-flex">
+                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white">
+                        <span class="text-xs font-bold">BN</span>
+                    </div>
+                    <span>Mr B Nyaruviro</span>
+                </div>
+            </div>
+            
+            <div class="border-t border-light-border dark:border-dark-border pt-4 mt-4">
+                <h3 class="font-medium mb-2">Timeline</h3>
+                <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <span>Sep 1, 2023</span>
+                    <span>Jun 15, 2024</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <div class="bg-primary h-2.5 rounded-full" style="width: 35%"></div>
+                </div>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-xs text-gray-500 dark:text-gray-400">35% Complete</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">288 days total</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activity -->
+        <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+            <h2 class="text-lg font-bold mb-4">Recent Activity</h2>
+            <div id="activity-list" class="space-y-3">
+                <div class="flex items-start pb-3 border-b border-light-border dark:border-dark-border">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
+                        <i class="bx bx-message-square-edit"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm"><span class="font-medium">Jane</span> added a comment on <span class="font-medium">Chapter 3 - Analysis</span></p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">10 minutes ago</p>
+                    </div>
+                </div>
+                <div class="flex items-start pb-3 border-b border-light-border dark:border-dark-border">
+                    <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center text-green-500 dark:text-green-300 mr-3">
+                        <i class="bx bx-check-circle"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm"><span class="font-medium">Mr B Nyaruviro</span> approved <span class="font-medium">Chapter 1 - Introduction</span></p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">2 hours ago</p>
+                    </div>
+                </div>
+                <div class="flex items-start pb-3 border-b border-light-border dark:border-dark-border">
+                    <div class="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900 flex items-center justify-center text-amber-500 dark:text-amber-300 mr-3">
+                        <i class="bx bx-upload"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm"><span class="font-medium">You</span> uploaded revised version of <span class="font-medium">Chapter 2 - Literature Review</span></p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Yesterday</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-500 dark:text-purple-300 mr-3">
+                        <i class="bx bx-file"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm"><span class="font-medium">Mike</span> created initial draft of <span class="font-medium">Chapter 3 - Analysis</span></p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">2 days ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

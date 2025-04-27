@@ -79,6 +79,9 @@ def check_user(request):
 def home(request):
     return render(request, 'home.html')
 
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
 def documentation(request):
     return render(request, 'documentation.html')
 
@@ -87,3 +90,15 @@ def group_collaboration(request):
 
 def reports(request):
     return render(request, 'reports.html')
+
+def student_groups(request):
+    return render(request, 'student-groups.html')
+
+def review(request):
+    return render(request, 'review.html')
+
+def evaluation(request):
+    return render(request, 'evaluation.html')
+
+def analytics(request):
+    return render(request, 'analytics.html')

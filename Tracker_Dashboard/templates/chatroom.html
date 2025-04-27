@@ -3,6 +3,176 @@
 {% block title %}Chatroom{% endblock %}
 
 {% block content %}
-<h1>Chatroom</h1>
-<p>Welcome to the chatroom page.</p>
+<section id="chatroom-section" class="section-content hidden">
+    <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border h-[calc(100vh-9rem)] flex flex-col">
+        <div class="border-b border-light-border dark:border-dark-border p-4">
+            <h2 class="text-lg font-bold">Project Chatroom</h2>
+        </div>
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Chat Sidebar -->
+            <div class="w-64 border-r border-light-border dark:border-dark-border hidden md:block">
+                <div class="p-3 border-b border-light-border dark:border-dark-border">
+                    <div class="relative">
+                        <input type="text" placeholder="Search chats..." class="w-full pl-8 pr-3 py-2 text-base rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg">
+                        <i class="bx bx-search absolute left-2.5 top-2.5 text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="overflow-y-auto h-[calc(100%-56px)]">
+                    <div class="p-2">
+                        <h3 class="text-xs uppercase font-semibold text-gray-500 dark:text-gray-400 px-2 py-1">Chats</h3>
+                        <div class="mt-1 space-y-1">
+                            <div class="flex items-center p-2 rounded-md bg-primary/10 text-primary">
+                                <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white mr-3">
+                                    <span class="text-xs font-bold">BN</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-medium truncate">Mr B Nyaruviro</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Let's meet on Wednesday...</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-border dark:hover:bg-dark-border transition-colors">
+                                <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white mr-3">
+                                    <span class="text-xs font-bold">JS</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-medium truncate">Jane Smith</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 truncate">I'll look at those papers...</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-border dark:hover:bg-dark-border transition-colors">
+                                <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white mr-3">
+                                    <span class="text-xs font-bold">MK</span>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-medium truncate">Mike Kumar</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Let me know if the diagrams...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-2 mt-2">
+                        <h3 class="text-xs uppercase font-semibold text-gray-500 dark:text-gray-400 px-2 py-1">Group Chats</h3>
+                        <div class="mt-1 space-y-1">
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-border dark:hover:bg-dark-border transition-colors">
+                                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white mr-3">
+                                    <i class="bx bx-group"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-medium truncate">Project Team</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Mike: When's our next meeting...</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-border dark:hover:bg-dark-border transition-colors">
+                                <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white mr-3">
+                                    <i class="bx bx-book"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-medium truncate">Documentation Team</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Jane: I've updated the outlines...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Main -->
+            <div class="flex-1 flex flex-col">
+                <!-- Chat Header -->
+                <div class="p-3 border-b border-light-border dark:border-dark-border flex items-center justify-between">
+                    <div class="flex items-center">
+                        <button class="md:hidden mr-2 p-1">
+                            <i class="bx bx-menu-alt-left text-xl"></i>
+                        </button>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white mr-3">
+                                <span class="text-xs font-bold">BN</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Mr B Nyaruviro</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Project Supervisor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="p-2 hover:bg-light-border dark:hover:bg-dark-border rounded-full">
+                            <i class="bx bx-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Chat Messages -->
+                <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4">
+                    <div class="flex items-end">
+                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">BN</span>
+                        </div>
+                        <div class="max-w-[75%] bg-light-border dark:bg-dark-border rounded-lg p-3">
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Mr B Nyaruviro • 2:30 PM</p>
+                            <p>Hello Desire, I've reviewed your Chapter 1. Your objectives need to be more SMART - they should be measurable. Please revise and resubmit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-end justify-end">
+                        <div class="max-w-[75%] bg-primary rounded-lg p-3 text-white">
+                            <p class="text-xs text-white/70 mb-1">You • 2:45 PM</p>
+                            <p>Thanks for the feedback! I'll make the objectives more specific and measurable. Will resubmit by tomorrow.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-end">
+                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">BN</span>
+                        </div>
+                        <div class="max-w-[75%] bg-light-border dark:bg-dark-border rounded-lg p-3">
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Mr B Nyaruviro • 3:15 PM</p>
+                            <p>Great! Also, let's schedule a meeting to discuss your literature review approach. When are you free next week?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-end justify-end">
+                        <div class="max-w-[75%] bg-primary rounded-lg p-3 text-white">
+                            <p class="text-xs text-white/70 mb-1">You • 3:20 PM</p>
+                            <p>I'm available Monday afternoon or Wednesday morning. Which works better for you?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center">
+                        <span class="text-xs text-gray-500 dark:text-gray-400 bg-light-card dark:bg-dark-card px-2 py-1 rounded-full">Today</span>
+                    </div>
+                    
+                    <div class="flex items-end">
+                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">BN</span>
+                        </div>
+                        <div class="max-w-[75%] bg-light-border dark:bg-dark-border rounded-lg p-3">
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Mr B Nyaruviro • 9:05 AM</p>
+                            <p>Let's meet on Wednesday at 10 AM. I've sent you a calendar invite. Please come prepared with your literature review outline and the key papers you plan to reference.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat Input -->
+                <div class="p-3 border-t border-light-border dark:border-dark-border">
+                    <div class="flex items-end">
+                        <div class="flex-1">
+                            <div class="relative">
+                                <textarea id="chat-input" placeholder="Type a message..." class="w-full pl-3 pr-10 py-2 text-base rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg min-h-[42px] max-h-32 resize-none"></textarea>
+                                <div class="absolute right-2 bottom-2">
+                                    <button class="p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                                        <i class="bx bx-paperclip"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="send-chat-btn" class="ml-2 p-2 bg-primary hover:bg-secondary text-white rounded-md">
+                            <i class="bx bx-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

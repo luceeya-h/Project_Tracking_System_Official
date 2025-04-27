@@ -17,4 +17,9 @@ urlpatterns = [
     path('progress/', views.progress, name='progress'),
     path('library/', views.library, name='library'),
     path('settings/', views.settings, name='settings'), 
+    path('dashboard/', views.dashboard, name='dashboard'), 
+    path('student-groups/', views.student_groups, name='student_groups'), 
+    path('review/', views.review, name='review'),
+    path('evaluation/', views.evaluation, name='evaluation'),
+    path('analytics/', views.analytics, name='analytics'),
 ]
