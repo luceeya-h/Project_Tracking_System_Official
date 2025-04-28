@@ -3,6 +3,220 @@
 {% block title %}Review Documents{% endblock %}
 
 {% block content %}
-<h1>Review Documents</h1>
-<p>Welcome to the review page.</p>
+<section id="review-documents-section" class="section-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Review Documents</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <!-- Documents Navigation Sidebar -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                <div class="mb-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search documents..." class="w-full pl-8 pr-3 py-2 text-base rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg">
+                        <i class="bx bx-search absolute left-2.5 top-2.5 text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <span>Group 1</span>
+                            <span class="ml-2 px-2 py-0.5 bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 rounded text-xs">3 Pending</span>
+                        </h3>
+                        <div class="space-y-1 pl-2">
+                            <div class="flex items-center p-2 rounded-md bg-primary/10 text-primary cursor-pointer">
+                                <i class="bx bx-file-blank mr-2"></i>
+                                <span>Chapter 3: Analysis</span>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg cursor-pointer">
+                                <i class="bx bx-file-blank mr-2"></i>
+                                <span>Chapter 2: Literature Review</span>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg cursor-pointer">
+                                <i class="bx bx-check-circle text-green-500 mr-2"></i>
+                                <span>Chapter 1: Introduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <span>Group 2</span>
+                            <span class="ml-2 px-2 py-0.5 bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 rounded text-xs">1 Pending</span>
+                        </h3>
+                        <div class="space-y-1 pl-2">
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg cursor-pointer">
+                                <i class="bx bx-file-blank mr-2"></i>
+                                <span>Chapter 2: Literature Review</span>
+                            </div>
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg cursor-pointer">
+                                <i class="bx bx-check-circle text-green-500 mr-2"></i>
+                                <span>Chapter 1: Introduction</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <span>Group 3</span>
+                            <span class="ml-2 px-2 py-0.5 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 rounded text-xs">Completed</span>
+                        </h3>
+                        <div class="space-y-1 pl-2">
+                            <div class="flex items-center p-2 rounded-md hover:bg-light-bg dark:hover:bg-dark-bg cursor-pointer">
+                                <i class="bx bx-check-circle text-green-500 mr-2"></i>
+                                <span>Final Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Document Content and Review -->
+            <div class="md:col-span-3">
+                <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Chapter 3: Analysis</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Submitted by: Group 1 (Desire Munyanyi) • Feb 2, 2024</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1.5 border border-light-border dark:border-dark-border rounded-md text-sm hover:bg-light-bg dark:hover:bg-dark-bg">
+                                <i class="bx bx-download mr-1"></i> Download
+                            </button>
+                            <button class="px-3 py-1.5 border border-light-border dark:border-dark-border rounded-md text-sm hover:bg-light-bg dark:hover:bg-dark-bg">
+                                <i class="bx bx-history mr-1"></i> Revisions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-light-border dark:border-dark-border pt-4 mt-2">
+                        <!-- Document content -->
+                        <div class="prose prose-sm dark:prose-invert max-w-none">
+                            <h2>3.1 Information Gathering Tools</h2>
+                            <p>This chapter presents the analysis of the system requirements and design considerations for the collaborative project tracking system. Information was gathered through interviews with supervisors and students, questionnaires, and analysis of existing systems.</p>
+                            
+                            <h2>3.2 Description of System</h2>
+                            <p>The proposed system will be a web-based platform that facilitates collaboration between students and supervisors throughout the academic project lifecycle. It will focus on three core functionalities:</p>
+                            
+                            <ol>
+                                <li>Non-repudiation collaboration mechanisms</li>
+                                <li>Chapter review and report generation</li>
+                                <li>Structured feedback and progress tracking</li>
+                            </ol>
+                            
+                            <h2>3.3 Data Analysis</h2>
+                            <h3>3.3.1 Context Diagram</h3>
+                            <p>[Context diagram to be added]</p>
+                            
+                            <h3>3.3.2 DFD of Existing System</h3>
+                            <p>[DFD diagram to be added]</p>
+                            
+                            <h2>3.4 Evaluation of Alternative Systems</h2>
+                            <p>Several existing systems were evaluated for potential use or adaptation:</p>
+                            <ul>
+                                <li>GitHub/GitLab: Strong version control but lacks structured academic feedback</li>
+                                <li>Learning Management Systems: Good assessment tools but limited project management</li>
+                                <li>Project Management Tools: Excellent tracking but lack academic context</li>
+                            </ul>
+                            
+                            <h2>3.5 Functional Analysis of Proposed System</h2>
+                            <h3>3.5.1 Functional Requirements</h3>
+                            <ul>
+                                <li>User authentication and role-based access control</li>
+                                <li>Document management with version control</li>
+                                <li>Chapter submission and review workflow</li>
+                                <li>Feedback mechanism with scoring system</li>
+                                <li>Report generation for chapter reviews</li>
+                                <li>Progress tracking and visualization</li>
+                                <li>Notification system for updates and deadlines</li>
+                            </ul>
+                            
+                            <h3>3.5.2 Non-functional Requirements</h3>
+                            <ul>
+                                <li>Security: Ensure data privacy and integrity</li>
+                                <li>Usability: Intuitive interface for both students and supervisors</li>
+                                <li>Reliability: Consistent performance with minimal downtime</li>
+                                <li>Scalability: Support multiple concurrent users</li>
+                                <li>Compatibility: Work across major browsers and devices</li>
+                            </ul>
+                            
+                            <h3>3.5.3 Use Case Diagrams</h3>
+                            <p>[Use case diagrams to be added]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review Form -->
+                <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                    <h3 class="font-semibold mb-4">Document Review</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Review Comments</label>
+                            <textarea id="review-comments" class="w-full px-3 py-2 border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg rounded-md text-base" rows="5" placeholder="Provide your feedback and comments..."></textarea>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Score (out of 10)</label>
+                                <select id="review-score" class="w-full px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                                    <option value="">-- Select Score --</option>
+                                    <option value="10">10/10 - Excellent</option>
+                                    <option value="9">9/10 - Very Good</option>
+                                    <option value="8">8/10 - Good</option>
+                                    <option value="7">7/10 - Satisfactory</option>
+                                    <option value="6">6/10 - Adequate</option>
+                                    <option value="5">5/10 - Needs Improvement</option>
+                                    <option value="4">4/10 or less - Requires Significant Revision</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Decision</label>
+                                <select id="review-decision" class="w-full px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                                    <option value="">-- Select Decision --</option>
+                                    <option value="approve">Approve</option>
+                                    <option value="revisions">Needs Revisions</option>
+                                    <option value="reject">Reject</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Annotations (Optional)</label>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                                You can add specific annotations to the document.
+                            </div>
+                            <div class="space-y-2" id="annotations-list">
+                                <div class="flex justify-between items-center p-2 bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border rounded-md">
+                                    <span class="text-sm">Section 3.3.1 - Context Diagram missing</span>
+                                    <button class="text-red-500 annotation-delete">
+                                        <i class="bx bx-x"></i>
+                                    </button>
+                                </div>
+                                <div class="flex justify-between items-center p-2 bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border rounded-md">
+                                    <span class="text-sm">Section 3.5.3 - Use Case Diagrams needed</span>
+                                    <button class="text-red-500 annotation-delete">
+                                        <i class="bx bx-x"></i>
+                                    </button>
+                                </div>
+                                <button id="add-annotation" class="text-primary text-sm flex items-center">
+                                    <i class="bx bx-plus mr-1"></i> Add Annotation
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end space-x-2">
+                            <button id="save-review-draft" class="px-4 py-2 border border-light-border dark:border-dark-border rounded-md">
+                                Save as Draft
+                            </button>
+                            <button id="submit-review" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-md">
+                                Submit Review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -100,5 +100,3 @@ def review(request):
 def evaluation(request):
     return render(request, 'evaluation.html')
 
-def analytics(request):
-    return render(request, 'analytics.html')

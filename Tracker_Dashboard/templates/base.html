@@ -95,19 +95,22 @@
                                 <span>Reports</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{% url 'settings' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
-                                <i class="bx bx-cog text-xl mr-3"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'home' %}" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="logout-btn">
-                                <i class="bx bx-log-out text-xl mr-3"></i>
-                                <span>Log Out</span>
-                            </a>
-                        </li>
                     </ul>
+                        <div class="pt-6 mt-6 border-t border-light-border dark:border-dark-border">
+                            <ul class="space-y-1">
+                                <li>
+                                    <a href="#settings" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
+                                        <i class="bx bx-cog text-xl mr-3"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#logout" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="logout-btn">
+                                        <i class="bx bx-log-out text-xl mr-3"></i>
+                                        <span>Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
                 </nav>
                 <!-- Added supervisor navigation to the sidebar -->
                 <nav id="supervisor-nav" class="flex-1 px-2 py-4 overflow-y-auto hidden">
@@ -137,7 +140,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{% url 'home' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
+                            <a href="{% url 'reports' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
                                 <i class="bx bx-chart text-xl mr-3"></i>
                                 <span>Reports &amp; Analytics</span>
                             </a>

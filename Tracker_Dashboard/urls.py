@@ -21,5 +21,4 @@ urlpatterns = [
     path('student-groups/', views.student_groups, name='student_groups'), 
     path('review/', views.review, name='review'),
     path('evaluation/', views.evaluation, name='evaluation'),
-    path('analytics/', views.analytics, name='analytics'),
 ]

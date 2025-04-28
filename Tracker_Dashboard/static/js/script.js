@@ -1,6 +1,5 @@
 // Example JavaScript
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("JavaScript is loaded!");
+document.addEventListener("DOMContentLoaded", function () { 
     // Add your custom JavaScript logic here
 
     // JavaScript to toggle supervisor view
@@ -548,3 +547,5 @@ document.getElementById('supervisor-logout-btn').addEventListener('click', (e) =
 // Initialize the application
 updateUIForRole('student');
 initChapterNavigation();
+
+console.log("JavaScript is loaded!");
