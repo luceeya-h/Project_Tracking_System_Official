@@ -95,7 +95,7 @@ def reports(request):
     return render(request, 'reports.html')
 
 def reports_super(request):
-    return render(request, 'reports.html')
+    return render(request, 'reports_super.html')
 
 def student_groups(request):
     return render(request, 'student-groups.html')
