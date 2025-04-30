@@ -60,6 +60,9 @@ def library(request):
 def settings(request):
     return render(request, 'settings.html')
 
+def settings_super(request):
+    return render(request, 'settings_super.html')
+
 def check_user(request):
     if request.method == 'POST':
         import json
@@ -89,6 +92,9 @@ def group_collaboration(request):
     return render(request, 'group_collaboration.html')
 
 def reports(request):
+    return render(request, 'reports.html')
+
+def reports_super(request):
     return render(request, 'reports.html')
 
 def student_groups(request):
