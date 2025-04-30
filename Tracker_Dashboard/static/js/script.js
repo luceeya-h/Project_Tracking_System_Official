@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-// Check for dark mode preference
- if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+   // Check for dark mode preference
+   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.classList.add('dark');
 }
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
@@ -73,7 +73,6 @@ sidebarToggle.addEventListener('click', () => {
 // Navigation handling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         
         // Remove active class from all links
         navLinks.forEach(l => l.classList.remove('bg-primary', 'text-white', 'active-nav'));
@@ -84,16 +83,7 @@ navLinks.forEach(link => {
         // Get the section id from data attribute
         const sectionId = link.getAttribute('data-section');
         currentSection = sectionId;
-        
-        // Update page title
-        pageTitle.textContent = link.querySelector('span').textContent;
-        
-        // Hide all sections
-        sections.forEach(section => section.classList.add('hidden'));
-        
-        // Show the selected section
-        document.getElementById(`${sectionId}-section`).classList.remove('hidden');
-        
+    
         // Close sidebar on mobile when a link is clicked
         if (window.innerWidth < 768) {
             sidebar.classList.add('-translate-x-full');
@@ -129,10 +119,6 @@ function updateUIForRole(role) {
         settingsIdLabel.textContent = 'Student ID';
         settingsAvatar.className = 'w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white text-2xl font-bold mr-4';
         settingsTitle.textContent = 'Student Settings';
-        
-        // Show student nav, hide supervisor nav
-        studentNav.classList.remove('hidden');
-        supervisorNav.classList.add('hidden');
         
         // Show home section by default
         sections.forEach(section => section.classList.add('hidden'));
@@ -470,11 +456,27 @@ function setTheme(theme) {
         }
     }
 }
+//role selector 
+const studentSections = document.querySelectorAll('.student-section');
+const supervisorSections = document.querySelectorAll('.supervisor-section');
 
-// Event listeners
-roleSelector.addEventListener('change', () => {
-    updateUIForRole(roleSelector.value);
-});
+function toggleSections() {
+    const selectedRole = roleSelector.value;
+
+    if (selectedRole === 'student') {
+        studentSections.forEach(section => section.classList.remove('hidden'));
+        supervisorSections.forEach(section => section.classList.add('hidden'));
+    } else if (selectedRole === 'supervisor') {
+        supervisorSections.forEach(section => section.classList.remove('hidden'));
+        studentSections.forEach(section => section.classList.add('hidden'));
+    }
+}
+
+// Initial toggle based on the current selection
+toggleSections();
+
+// Add event listener to toggle sections on role change
+roleSelector.addEventListener('change', toggleSections);
 
 chapterGuideBtn.addEventListener('click', showChapterGuide);
 closeGuideModalBtn.addEventListener('click', () => chapterGuideModal.classList.add('hidden'));
@@ -547,5 +549,4 @@ document.getElementById('supervisor-logout-btn').addEventListener('click', (e) =
 // Initialize the application
 updateUIForRole('student');
 initChapterNavigation();
-
 console.log("JavaScript is loaded!");

@@ -16,9 +16,9 @@ urlpatterns = [
     path('chatroom/', views.chatroom, name='chatroom'),
     path('progress/', views.progress, name='progress'),
     path('library/', views.library, name='library'),
-    path('settings/', views.settings, name='settings'), 
-    path('dashboard/', views.dashboard, name='dashboard'), 
-    path('student-groups/', views.student_groups, name='student_groups'), 
+    path('settings/', views.settings, name='settings'),
+    path('settings_super/', views.settings, name='settings_super'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('review/', views.review, name='review'),
     path('evaluation/', views.evaluation, name='evaluation'),
 ]

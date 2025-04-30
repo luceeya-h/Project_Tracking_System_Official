@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HIT Project Collaboration System{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#4B4ACB',
+                        dark: {
+                            bg: '#181818',
+                            card: '#252525',
+                            sidebar: '#1E1E1E',
+                            border: '#333333'
+                        },
+                        light: {
+                            bg: '#FFFFFF',
+                            card: '#F5F5F5',
+                            sidebar: '#F8F8F8',
+                            border: '#E5E5E5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/marked/marked.min.css">
+    {% block head %}{% endblock %}
+</head>
+<body class="bg-light-bg dark:bg-dark-bg text-gray-800 dark:text-gray-200 min-h-screen transition-colors duration-200">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 ease-in-out bg-light-sidebar dark:bg-dark-sidebar border-r border-light-border dark:border-dark-border md:translate-x-0 -translate-x-full">
+            <div class="flex flex-col h-full">
+                <!-- Logo -->
+                <div class="flex items-center h-16 px-4 border-b border-light-border dark:border-dark-border">
+                    <i class="bx bx-book-reader text-primary text-3xl"></i>
+                    <h1 class="text-xl font-bold ml-2">HIT Project System</h1>
+                </div>
+                <!-- User Info -->
+                <div class="flex items-center px-4 py-4 border-b border-light-border dark:border-dark-border">
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
+                        <span id="user-initial">B</span>
+                    </div>
+                    <div class="ml-3">
+                        <p id="user-name" class="font-medium">Mr B Nyaruviro</p>
+                        <p id="user-role" class="text-sm text-gray-500 dark:text-gray-400">Supervisor</p>
+                    </div>
+                </div>
+                <!-- Supervisor Navigation -->
+                <nav id="supervisor-nav" class="flex-1 px-2 py-4 overflow-y-auto">
+                    <ul class="space-y-1">
+                        <li>
+                            <a href="{% url 'dashboard' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card active-nav" data-section="supervisor-home">
+                                <i class="bx bx-home-alt text-xl mr-3"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'student_groups' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="student-groups">
+                                <i class="bx bx-group text-xl mr-3"></i>
+                                <span>Student Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'review' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="review-documents">
+                                <i class="bx bx-file-find text-xl mr-3"></i>
+                                <span>Review Documents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'evaluation' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="evaluation">
+                                <i class="bx bx-list-check text-xl mr-3"></i>
+                                <span>Evaluation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reports' %}" class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="supervisor-reports">
+                                <i class="bx bx-chart text-xl mr-3"></i>
+                                <span>Reports &amp; Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pt-6 mt-6 border-t border-light-border dark:border-dark-border">
+                        <ul class="space-y-1">
+                            <li>
+                                <a href="{% url 'settings' %}"class="nav-link flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-light-card dark:hover:bg-dark-card" data-section="settings">
+                                    <i class="bx bx-cog text-xl mr-3"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'home' %}" class="flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400" id="supervisor-logout-btn">
+                                    <i class="bx bx-log-out text-xl mr-3"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col md:ml-64">
+            <!-- Top Header -->
+            <header class="sticky top-0 z-40 flex h-16 items-center bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border px-4">
+                <button id="sidebar-toggle" class="p-2 rounded-md md:hidden">
+                    <i class="bx bx-menu text-2xl"></i>
+                </button>
+                
+                <div class="flex-1 flex justify-between items-center ml-4 md:ml-0">
+                    <h2 id="page-title" class="text-xl font-bold">{% block page_title %}Dashboard{% endblock %}</h2>
+                    
+                    <div class="flex items-center space-x-4">
+                        <select id="role-selector" class="rounded-md border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card px-3 py-2 text-base">
+                            <option value="supervisor" selected>Supervisor View</option>
+                            <option value="student">Student View</option>
+                        </select>
+                        <div class="relative">
+                            <button id="notification-btn" class="p-2 rounded-full hover:bg-light-card dark:hover:bg-dark-card relative">
+                                <i class="bx bx-bell text-xl"></i>
+                                <span id="notification-badge" class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">3</span>
+                            </button>
+                            <div id="notification-dropdown" class="absolute right-0 mt-2 w-72 bg-light-card dark:bg-dark-card rounded-md shadow-lg overflow-hidden z-20 border border-light-border dark:border-dark-border hidden">
+                                <div class="p-3 border-b border-light-border dark:border-dark-border flex justify-between items-center">
+                                    <h3 class="font-medium">Notifications</h3>
+                                    <button id="mark-all-read" class="text-xs text-primary hover:underline">Mark all as read</button>
+                                </div>
+                                <div id="notification-list" class="max-h-80 overflow-y-auto">
+                                    <div class="notification-item p-3 border-b border-light-border dark:border-dark-border hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-message-square-edit"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Jane Smith</span> commented on your chapter</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">10 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item p-3 border-b border-light-border dark:border-dark-border hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-check-circle"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Mr B Nyaruviro</span> approved your Chapter 1</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">2 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item p-3 hover:bg-light-bg dark:hover:bg-dark-bg">
+                                        <div class="flex">
+                                            <div class="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white mr-3 flex-shrink-0">
+                                                <i class="bx bx-calendar-exclamation"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-sm"><span class="font-medium">Deadline approaching</span> for Chapter 2 submission</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">1 day ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-4">
+                {% block content %}
+                <!-- Ensure this block is populated with the content of the respective page -->
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,9 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base_stud.html' %}
 
 {% block title %}Documentation{% endblock %}
+{% block page_title %}Documentation{% endblock %}
 
 {% block content %}
-<section id="documentation-section" class="section-content">
+<section id="documentation-section" class="student-section">
     <div class="mb-6">
         <h2 class="text-xl font-bold mb-4">Project Documentation</h2>
         
@@ -221,4 +222,66 @@
         </div>
     </div>
 </section>
+<div id="chapter-guide-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-light-bg dark:bg-dark-bg rounded-lg w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold" id="guide-title">Chapter 1: Introduction - Guide</h2>
+                <button id="close-guide-modal" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    <i class="bx bx-x text-2xl"></i>
+                </button>
+            </div>
+            <div id="guide-content">
+                <!-- Guide content will be loaded here -->
+                <div class="prose prose-sm dark:prose-invert max-w-none">
+                    <p>This chapter includes the background to the study, statement of the problem, research objectives and research questions, research hypothesis(es)/project propositions/s, significance of the study and delimitations of the study.</p>
+                    
+                    <h3>Required Sections:</h3>
+                    <ul>
+                        <li><strong>Background</strong> - Provide context for the research problem. What led to this project?</li>
+                        <li><strong>Problem Statement</strong> - Clearly define the problem being addressed.</li>
+                        <li><strong>Objectives</strong> - List SMART objectives (Specific, Measurable, Achievable, Relevant, Time-bound). Always start with "To..."</li>
+                        <li><strong>Hypothesis</strong> - State your research hypothesis or project proposition.</li>
+                        <li><strong>Justification</strong> - Explain why this research is important.</li>
+                        <li><strong>Proposed Tools</strong> - List the technologies and methodologies to be used.</li>
+                        <li><strong>Feasibility Study</strong> - Conduct technical, economic, and operational feasibility analyses.</li>
+                        <li><strong>Project Plan</strong> - Include timeline and Gantt chart.</li>
+                    </ul>
+                    
+                    <h3>Formatting Requirements:</h3>
+                    <ul>
+                        <li>Use Times Roman 12 for regular text</li>
+                        <li>Main headings should be Times Roman 14</li>
+                        <li>Use 1.5 line spacing</li>
+                        <li>Number all chapters, sub-chapters, tables and diagrams</li>
+                    </ul>
+                    
+                    <h3>Assessment Criteria:</h3>
+                    <p>This chapter is worth 10% of the total document mark. Your supervisor will assess:</p>
+                    <ul>
+                        <li>Clarity of problem statement</li>
+                        <li>Quality of SMART objectives</li>
+                        <li>Comprehensiveness of background</li>
+                        <li>Practicality of project plan</li>
+                        <li>Overall organization and formatting</li>
+                    </ul>
+                    
+                    <h3>Tips:</h3>
+                    <ul>
+                        <li>Keep your problem statement concise but comprehensive</li>
+                        <li>Ensure objectives are measurable and achievable within the timeframe</li>
+                        <li>Use proper citations for any sources referenced</li>
+                        <li>Validate your feasibility study with concrete evidence</li>
+                        <li>Be realistic in your project timeline</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button id="close-guide-btn" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-md">
+                    Close Guide
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
