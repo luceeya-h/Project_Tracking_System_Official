@@ -5,7 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from .models import Authentication
+
 
 # Create your views here.
 def index(request):
@@ -20,7 +22,7 @@ class CustomLoginView(LoginView):
         return super().form_invalid(form)
 
     
-def login_view(request):
+def custom_login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -122,9 +124,11 @@ def check_user(request):
 
     return JsonResponse({'exists': False})
 
+@login_required
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def dashboard(request):
     return render(request, 'dashboard.html')
 

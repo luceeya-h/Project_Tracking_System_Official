@@ -7,7 +7,26 @@
 <section id="documentation-section" class="student-section">
     <div class="mb-6">
         <h2 class="text-xl font-bold mb-4">Project Documentation</h2>
-        
+        <div class="mdd">
+            <!--Here is a tag to upload files-->
+            <form method="POST" enctype="multipart/form-data" action="#">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="chapter-file" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Select Chapter File</label>
+                    <input type="file" id="chapter-file" name="chapter_file" class="mt-1 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none dark:text-gray-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                </div>
+                <div class="mb-4">
+                    <label for="chapter-title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Chapter Title</label>
+                    <input type="text" id="chapter-title" name="chapter_title" class="mt-1 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary dark:text-gray-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" placeholder="Enter chapter title">
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="px-4 py-2 bg-primary hover:bg-secondary text-white rounded-md text-sm">
+                        Upload Chapter
+                    </button>
+                </div>
+            </form>
+        </div>
+        <br>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <!-- Chapters Navigation Sidebar -->
             <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
@@ -153,11 +172,11 @@
                         <textarea id="chapter-editor" class="w-full h-96 p-3 bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border rounded-md text-base" placeholder="Enter chapter content..."></textarea>
                     </div>
                 </div>
-                
+
                 <!-- Feedback and Comments Section -->
                 <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
                     <h3 class="font-semibold mb-4">Feedback &amp; Comments</h3>
-                    
+
                     <div id="feedback-list" class="space-y-4 mb-4">
                         <div class="bg-light-bg dark:bg-dark-bg p-3 rounded-lg">
                             <div class="flex justify-between items-center mb-2">

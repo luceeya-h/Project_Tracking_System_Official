@@ -59,19 +59,19 @@
                 <div class="flex flex-wrap gap-2">
                     <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
                         <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
-                            <span class="text-xs font-bold">DM</span>
+                            <span class="text-xs font-bold">{{request.user.username | slice:":1" }}</span>
                         </div>
-                        <span>Desire Munyanyi (You)</span>
+                        <span>{{request.user.username}}(You)</span>
                     </div>
                     <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
                         <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white">
-                            <span class="text-xs font-bold">JS</span>
+                            <span class="text-xs font-bold">J</span>
                         </div>
                         <span>Jane Smith</span>
                     </div>
                     <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border">
                         <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white">
-                            <span class="text-xs font-bold">MK</span>
+                            <span class="text-xs font-bold">M</span>
                         </div>
                         <span>Mike Kumar</span>
                     </div>
@@ -82,7 +82,7 @@
                 <h3 class="font-medium mb-2">Supervisor</h3>
                 <div class="flex items-center space-x-2 bg-light-bg dark:bg-dark-bg p-2 rounded-md border border-light-border dark:border-dark-border inline-flex">
                     <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white">
-                        <span class="text-xs font-bold">BN</span>
+                        <span class="text-xs font-bold">N</span>
                     </div>
                     <span>Mr B Nyaruviro</span>
                 </div>
