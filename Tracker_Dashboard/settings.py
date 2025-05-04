@@ -20,5 +20,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",  # Ensure this points to your static directory
 ]
-
+INSTALLED_APPS = [
+    # ...existing apps...
+    'Tracker_Dashboard',
+]
+AUTH_USER_MODEL = 'Tracker_Dashboard.CustomUser'
 # ...existing code...

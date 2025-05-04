@@ -22,3 +22,4 @@ INSTALLED_APPS = [
     # ...existing apps...
     'Tracker_Dashboard',
 ]
+AUTH_USER_MODEL = 'Tracker_Dashboard.CustomUser'

@@ -6,8 +6,8 @@ from django.contrib.auth.hashers import check_password
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .models import Authentication
-
+from .models import CustomUser
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 def index(request):
@@ -28,7 +28,7 @@ def custom_login_view(request):
         password = request.POST.get('password')
 
         try:
-            user = Authentication.objects.get(email=email)
+            user = CustomUser.objects.get(email=email)
             if check_password(password, user.password):
                 request.session['user_id'] = user.id
                 request.session['user_role'] = user.role
@@ -43,7 +43,7 @@ def custom_login_view(request):
                     return redirect('login')
             else:
                 messages.error(request, "Invalid email or password.")
-        except Authentication.DoesNotExist:
+        except CustomUser.DoesNotExist:
             messages.error(request, "User not found.")
     return render(request, 'login.html')
 
@@ -73,7 +73,7 @@ def register_view(request):
             role = "unknown"
 
         try:
-            Authentication.objects.create(
+            CustomUser.objects.create(
                 firstname=fullname,
                 surname=surname,
                 regnum=reg_number,
@@ -116,10 +116,10 @@ def check_user(request):
         password = data.get('password')
 
         try:
-            user = Authentication.objects.get(email=email)
+            user = CustomUser.objects.get(email=email)
             if check_password(password, user.password):
                 return JsonResponse({'exists': True})
-        except Authentication.DoesNotExist:
+        except CustomUser.DoesNotExist:
             pass
 
     return JsonResponse({'exists': False})
