@@ -121,10 +121,9 @@
                     <h2 id="page-title" class="text-xl font-bold">{% block page_title %}Dashboard{% endblock %}</h2>
                     
                     <div class="flex items-center space-x-4">
-                        <select id="role-selector" class="rounded-md border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card px-3 py-2 text-base">
-                            <option value="supervisor" selected>Supervisor View</option>
-                            <option value="student">Student View</option>
-                        </select>
+                        <span id="role-display" class="px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card text-base font-medium">
+                            Supervisor - View
+                        </span>
                         <div class="relative">
                             <button id="notification-btn" class="p-2 rounded-full hover:bg-light-card dark:hover:bg-dark-card relative">
                                 <i class="bx bx-bell text-xl"></i>

@@ -2,27 +2,20 @@ from django.db import models
 from django.core.exceptions import ValidationError
 
 class Authentication(models.Model):
-    email = models.EmailField(unique=True)  # Parent element
+    email = models.EmailField(unique=True)
     firstname = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
-    regnum = models.CharField(max_length=20, unique=True)  # Registration number
-    password = models.CharField(max_length=128)  # Store hashed passwords
-    confirm_password = models.CharField(max_length=128)  # For validation purposes only
+    regnum = models.CharField(max_length=20, blank=True, null=True)
+    password = models.CharField(max_length=128)
     role = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.firstname} {self.surname} ({self.email}) - Role: {self.role}"
 
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
-
-    def clean(self):
-        # Ensure password and confirm_password match
-        if self.password != self.confirm_password:
-            raise ValidationError("Passwords do not match.")
     
     def save(self, *args, **kwargs):
-        # Call clean method before saving
         self.clean()
         super(Authentication, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.firstname} {self.surname} ({self.email}) - Role: {self.role}"

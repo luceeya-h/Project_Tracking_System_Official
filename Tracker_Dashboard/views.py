@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.contrib import messages
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import authenticate, login
 from .models import Authentication
 
 # Create your views here.
@@ -12,6 +14,36 @@ def index(request):
 class CustomLoginView(LoginView):
     template_name = 'login.html'
     redirect_authenticated_user = True
+    
+    def form_invalid(self, form):
+        messages.error(self.request, "Invalid email or password.")
+        return super().form_invalid(form)
+
+    
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        try:
+            user = Authentication.objects.get(email=email)
+            if check_password(password, user.password):
+                request.session['user_id'] = user.id
+                request.session['user_role'] = user.role
+                request.session['user_name'] = f"{user.firstname} {user.surname}"
+
+                if user.role == 'student':
+                    return redirect('home')  # student dashboard
+                elif user.role == 'supervisor':
+                    return redirect('dashboard')  # supervisor dashboard
+                else:
+                    messages.error(request, "Unknown role.")
+                    return redirect('login')
+            else:
+                messages.error(request, "Invalid email or password.")
+        except Authentication.DoesNotExist:
+            messages.error(request, "User not found.")
+    return render(request, 'login.html')
 
 def register_view(request):
     if request.method == 'POST':
@@ -26,15 +58,26 @@ def register_view(request):
             messages.error(request, "Passwords do not match.")
             return render(request, 'registration.html')
 
+        # Role detection
+        if reg_number:
+            role = "student"
+        elif email:
+            username = email.split('@')[0]
+            if not any(char.isdigit() for char in username):
+                role = "supervisor"
+            else:
+                role = "student"
+        else:
+            role = "unknown"
+
         try:
             Authentication.objects.create(
                 firstname=fullname,
                 surname=surname,
                 regnum=reg_number,
                 email=email,
-                password=password,
-                confirm_password=confirm_password,
-                role='student'
+                password=make_password(password),  # Only hash this one
+                role=role
             )
             messages.success(request, "Registration successful!")
             return redirect('login')
