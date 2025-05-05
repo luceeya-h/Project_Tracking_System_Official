@@ -50,14 +50,12 @@
                 <div class="flex items-center px-4 py-4 border-b border-light-border dark:border-dark-border">
                     <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                         <span id="user-initial">
-                            {{request.user.username | slice:":1" }}
-                        </span>
+                            {{ request.user.firstname|slice:":1" }}{{ request.user.surname|slice:":1" }}
+                          </span>                          
                     </div>
                     <div class="ml-3">
-                        <p id="user-name" class="font-medium">
-                            {{request.session.firstname}}
-                        </p>
-                        <p id="user-role" class="text-sm text-gray-500 dark:text-gray-400">Student</p>
+                        <p id="user-name">{{ request.user.firstname }} {{ request.user.surname }}</p>
+                        <p id="user-role" class="text-sm text-gray-500 dark:text-gray-400">{{ request.user.role|capfirst }} </p>
                     </div>
                 </div>
                 <!-- Navigation -->
@@ -131,7 +129,7 @@
                     
                     <div class="flex items-center space-x-4">
                         <span id="role-display" class="px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card text-base font-medium">
-                            Student - View
+                             {{ request.user.role|capfirst }} View
                         </span>
                         <div class="relative">
                             <button id="notification-btn" class="p-2 rounded-full hover:bg-light-card dark:hover:bg-dark-card relative">

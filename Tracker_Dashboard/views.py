@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from .models import CustomUser
 from django.contrib.auth import get_user_model
+from .decorators import student_required, supervisor_required
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login as auth_login
 
 # Create your views here.
 def index(request):
@@ -30,6 +33,7 @@ def custom_login_view(request):
         try:
             user = CustomUser.objects.get(email=email)
             if check_password(password, user.password):
+                auth_login(request, user)
                 request.session['user_id'] = user.id
                 request.session['user_role'] = user.role
                 request.session['user_name'] = f"{user.firstname} {user.surname}"
@@ -125,10 +129,12 @@ def check_user(request):
     return JsonResponse({'exists': False})
 
 @login_required
+@student_required
 def home(request):
     return render(request, 'home.html')
 
 @login_required
+@supervisor_required
 def dashboard(request):
     return render(request, 'dashboard.html')
 
