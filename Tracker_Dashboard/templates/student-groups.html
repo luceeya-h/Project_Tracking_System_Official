@@ -1,0 +1,170 @@
+{% extends 'base_super.html' %}
+
+{% block title %}Student-Groups{% endblock %}
+{% block page_title %}Student-Groups{% endblock %}
+
+{% block content %}
+<section id="student-groups-section" class="supervisor-section">
+    <div class="mb-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Student Groups</h2>
+            <button class="px-3 py-1 bg-primary hover:bg-secondary text-white rounded-md flex items-center text-sm">
+                <i class="bx bx-plus mr-1"></i> Add Group
+            </button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Group 1 -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-lg font-semibold">Group 1</h3>
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">In Progress</span>
+                </div>
+                
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Collaborative Project Tracking System</p>
+                
+                <div class="space-y-2 mb-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">DM</span>
+                        </div>
+                        <span>Desire Munyanyi (Lead)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">JS</span>
+                        </div>
+                        <span>Jane Smith</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">MK</span>
+                        </div>
+                        <span>Mike Kumar</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Progress</span>
+                        <span class="text-sm font-medium">35%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 35%"></div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2 mt-4">
+                    <button class="flex-1 px-3 py-1.5 border border-light-border dark:border-dark-border rounded-md text-sm hover:bg-light-bg dark:hover:bg-dark-bg">
+                        <i class="bx bx-message-square-dots mr-1"></i> Message
+                    </button>
+                    <button class="flex-1 px-3 py-1.5 bg-primary hover:bg-secondary text-white rounded-md text-sm">
+                        <i class="bx bx-show mr-1"></i> View Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Group 2 -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-lg font-semibold">Group 2</h3>
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">In Progress</span>
+                </div>
+                
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Secure Access Control System</p>
+                
+                <div class="space-y-2 mb-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">AC</span>
+                        </div>
+                        <span>Alex Chen (Lead)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">SJ</span>
+                        </div>
+                        <span>Sarah Johnson</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">KL</span>
+                        </div>
+                        <span>Kevin Lee</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Progress</span>
+                        <span class="text-sm font-medium">42%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 42%"></div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2 mt-4">
+                    <button class="flex-1 px-3 py-1.5 border border-light-border dark:border-dark-border rounded-md text-sm hover:bg-light-bg dark:hover:bg-dark-bg">
+                        <i class="bx bx-message-square-dots mr-1"></i> Message
+                    </button>
+                    <button class="flex-1 px-3 py-1.5 bg-primary hover:bg-secondary text-white rounded-md text-sm">
+                        <i class="bx bx-show mr-1"></i> View Details
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Group 3 -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4 hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-3">
+                    <h3 class="text-lg font-semibold">Group 3</h3>
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Completed</span>
+                </div>
+                
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Data Privacy Framework</p>
+                
+                <div class="space-y-2 mb-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">DC</span>
+                        </div>
+                        <span>David Chen (Lead)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">MP</span>
+                        </div>
+                        <span>Maria Perez</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white mr-2">
+                            <span class="text-xs font-bold">TW</span>
+                        </div>
+                        <span>Tom Wilson</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Progress</span>
+                        <span class="text-sm font-medium">100%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2 mt-4">
+                    <button class="flex-1 px-3 py-1.5 border border-light-border dark:border-dark-border rounded-md text-sm hover:bg-light-bg dark:hover:bg-dark-bg">
+                        <i class="bx bx-message-square-dots mr-1"></i> Message
+                    </button>
+                    <button class="flex-1 px-3 py-1.5 bg-primary hover:bg-secondary text-white rounded-md text-sm">
+                        <i class="bx bx-show mr-1"></i> View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

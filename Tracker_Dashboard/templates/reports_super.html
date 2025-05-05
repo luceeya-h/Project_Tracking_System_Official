@@ -1,0 +1,148 @@
+{% extends 'base_super.html' %}
+
+{% block title %}Reports{% endblock %}
+{% block page_title %}Reports{% endblock %}
+
+{% block content %}
+  <section id="supervisor-reports-section" class="supervisor-section">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold mb-4">Supervisor Reports &amp; Analytics</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Report Generation -->
+            <div class="bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                <h3 class="font-semibold mb-4">Generate Report</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Report Type</label>
+                        <select id="supervisor-report-type" class="w-full px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                            <option value="progress">Student Progress Report</option>
+                            <option value="evaluation">Evaluation Summary</option>
+                            <option value="comparison">Group Comparison</option>
+                            <option value="feedback">Feedback Analysis</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Select Group</label>
+                        <select id="supervisor-report-group" class="w-full px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                            <option value="all">All Groups</option>
+                            <option value="group1">Group 1</option>
+                            <option value="group2">Group 2</option>
+                            <option value="group3">Group 3</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Date Range</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="date" id="supervisor-report-start-date" class="px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                            <input type="date" id="supervisor-report-end-date" class="px-3 py-2 rounded-md border border-light-border dark:border-dark-border bg-light-bg dark:bg-dark-bg text-base">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Include in Report</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary" checked="">
+                                <span class="text-sm">Chapter Scores</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary" checked="">
+                                <span class="text-sm">Student Evaluations</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary" checked="">
+                                <span class="text-sm">Progress Metrics</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2 h-4 w-4 text-primary rounded border-gray-300 focus:ring-primary">
+                                <span class="text-sm">Detailed Comments</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="generate-supervisor-report" class="w-full px-4 py-2 bg-primary hover:bg-secondary text-white rounded-md">
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Analytics Dashboard -->
+            <div class="lg:col-span-2 bg-light-card dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border p-4">
+                <h3 class="font-semibold mb-4">Analytics Dashboard</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-light-bg dark:bg-dark-bg p-3 rounded-lg border border-light-border dark:border-dark-border">
+                        <h4 class="font-medium mb-2">Chapter Completion by Group</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Group 1</span>
+                                    <span class="text-sm">35%</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-primary rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Group 2</span>
+                                    <span class="text-sm">42%</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-blue-500 rounded-full" style="width: 42%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Group 3</span>
+                                    <span class="text-sm">100%</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light-bg dark:bg-dark-bg p-3 rounded-lg border border-light-border dark:border-dark-border">
+                        <h4 class="font-medium mb-2">Average Chapter Scores</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Chapter 1</span>
+                                    <span class="text-sm">8.7/10</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 87%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Chapter 2</span>
+                                    <span class="text-sm">7.5/10</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-yellow-500 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm">Chapter 3</span>
+                                    <span class="text-sm">6.2/10</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                    <div class="h-2 bg-amber-500 rounded-full" style="width: 62%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

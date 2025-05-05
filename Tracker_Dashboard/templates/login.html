@@ -8,39 +8,22 @@
 {% block content %}
 <div class="logincontainer">
     <div class="loginheading">Welcome to ProjectHub</div>
-    <form class="loginform" action="" method="post" id="loginForm"> 
+    <form class="loginform" action="{% url 'login' %}" method="post" id="loginForm"> 
         {% csrf_token %}
-        <input placeholder="Email" id="email" name="email" type="email" class="input" required="" />
-        <input placeholder="Password" id="password" name="password" type="password" class="input" required=""/>
+        <input placeholder="Email" id="email" name="email" type="email" class="input" required />
+        <input placeholder="Password" id="password" name="password" type="password" class="input" required />
         <span class="forgot-password"><a href="{% url 'forgot_password' %}">Forgot Password ?</a></span>
         <input value="Sign In" type="submit" class="login-button" />
         <div class="loginlink">
             <p>Are you a new User?<a href="{% url 'register' %}" class="register-link">Create Account</a></p>
         </div>
-    </form> 
-</div>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        const response = await fetch('/api/check-user/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        const data = await response.json();
-        if (data.exists) {
-            window.location.href = '/student-view/';
-        } else {
-            alert('Invalid credentials. Please try again.');
-        }
-    });
-</script>
+    </form>
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+    
 {% endblock %}
